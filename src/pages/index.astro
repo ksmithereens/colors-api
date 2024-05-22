@@ -30,14 +30,20 @@ const data = await res.json();
 		</header>
 
 		<main id="content" class="main-area">
-
 			<ul class="cards">
-		  
-				<!-- Your API Data -->
 				{
 					data.colors.map( (item) => 
 
-					<li>{item.name}</li>
+    			<li class="card-item" style={{ background: item.name }}>
+      				<a href="#">
+        				<figure class="card">
+          				<figcaption class="caption">
+            				<h3 class="caption-title">{item.name}</h3>
+            				<p>Within color group: {item.group}</p>
+          				</figcaption>
+        				</figure>
+      				</a>
+    			</li>
 
 					)
 				}
