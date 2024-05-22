@@ -5,7 +5,7 @@ import '../styles/global.css';
 
 
 // data source
-const source = '';
+const source = 'https://www.csscolorsapi.com/api/colors';
 // fetch the data
 const res = await fetch(source); 
 // store retreived data
@@ -34,7 +34,13 @@ const data = await res.json();
 			<ul class="cards">
 		  
 				<!-- Your API Data -->
+				{
+					data.colors.map( (item) => 
 
+					<li>{item.name}</li>
+
+					)
+				}
 		  
 			</ul>
 		  </main>
